@@ -6,6 +6,7 @@
 //size of the array
 #define SIZE 7
 
+//comment for checking
 void selsort(int *arr,int n);
 void swap(int *x,int *y);
 void display(int *arr,int n);
