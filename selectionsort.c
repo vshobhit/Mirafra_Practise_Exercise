@@ -7,6 +7,7 @@
 #define SIZE 7
 
 //comment for checking
+//3rd coment
 void selsort(int *arr,int n);
 void swap(int *x,int *y);
 void display(int *arr,int n);
