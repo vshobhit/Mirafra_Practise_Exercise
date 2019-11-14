@@ -1,12 +1,6 @@
 /*program to understand Insertion sort. It's like arranging the cards*/
-#include<stdio.h>
+#include"header.h"
 
-//for using memset()
-#include<string.h>
-
-void inssort(int *arr,int n);
-void display(int *arr,int n) ;
-#define SIZE 5
 
 void inssort(int *arr,int n)
 {
@@ -38,10 +32,4 @@ void inssort(int *arr,int n)
 	}
 }
 
-void display(int *arr,int n) 
-{
-	for(int i=0;i<n;i++)
-		printf("%d, ",arr[i]);
-	printf("\n\n");
-}			
 

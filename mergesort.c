@@ -1,14 +1,10 @@
 //program to understand use of merge sort
 
-#include<stdio.h>
-#include<stdlib.h>
-void msort(int a[],int temporary[],int left,int right);
-void merge_sort(int a[],int n);
-void merge(int a[],int temporary[],int lpos,int rpos,int rend);
-
+#include"header.h"
 //main merge_sort function
 void merge_sort(int a[],int n)
 {
+		int *temparray = malloc(n*sizeof(int));
 	//for storing resultant array
 	int *temp;
 	temp = (int*) malloc(n*sizeof(int));

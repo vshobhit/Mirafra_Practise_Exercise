@@ -1,15 +1,8 @@
 /*program to understand bubblesort*/
+
+
 #include<stdio.h>
-
-//for memset()
-#include<string.h>
-
-#define SIZE 7
-void swap(int *x,int *y);
-void Bsort(int *arr,int n);
-void display(int *arr ,int n);
-
-
+#include"header.h"
 /*here largest element goes downwards*/
 void Bsort(int *arr,int n)
 {
@@ -28,12 +21,12 @@ void Bsort(int *arr,int n)
 			if(arr[j] > arr[j+1])
 			{
 				//swap function for swapping the two neighbour elements in array
-				swap(&arr[j],&arr[j+1]);
+				Bswap(&arr[j],&arr[j+1]);
 				
 				//count for increment everytime swap happens 
 				//If in this loop swap doesn't occured that means array becomes sorted.
 				count++;
-				//printf("count = %d\n",count);	
+//				printf("count = %d\n",count);	
 			}
 		}
 			//for no swap condition
@@ -47,7 +40,7 @@ void Bsort(int *arr,int n)
 }
 
 //function for swapping two numbers when both are passed by reference
-void swap(int* x,int*y)
+void Bswap(int* x,int*y)
 {
 	int tmp = *x;
 	*x = *y;
@@ -55,11 +48,4 @@ void swap(int* x,int*y)
 	
 }
 
-//function for display of elements	
-void display(int *arr ,int n)
-{
-	for(int i = 0;i<n;i++)
-		printf("%d, ",*(arr+i));
-	printf("\n\n");
-}
 		

@@ -1,16 +1,8 @@
 /*program to understand selection sort*/
 /*complexity = O(n^2);*/
+#include"header.h"
 
-#include<stdio.h>
 
-//size of the array
-#define SIZE 7
-
-//comment for checking
-//3rd coment
-void selsort(int *arr,int n);
-void swap(int *x,int *y);
-void display(int *arr,int n);
 
 void selsort(int *arr,int n)
 {
@@ -34,25 +26,18 @@ void selsort(int *arr,int n)
 				cnt++;
 			 if(small == i)
 			{
-				printf("in return\n");
 				return;
 			}
 		}
 		/*put smallest value at 0th place*/
-		swap(&arr[i],&arr[small]);
+		Sswap(&arr[i],&arr[small]);
 	}
 }
 
-void swap(int* x,int* y)
+void Sswap(int* x,int* y)
 {
 	int temp = *x;
 	*x = *y;
 	*y = temp;
 }
 
-void display(int *arr,int n)
-{
-	for(int i=0;i<n;i++)
-		printf("%d, ",arr[i]);
-	printf("\n\n");
-}
