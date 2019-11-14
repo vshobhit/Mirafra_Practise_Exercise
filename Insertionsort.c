@@ -44,39 +44,4 @@ void display(int *arr,int n)
 		printf("%d, ",arr[i]);
 	printf("\n\n");
 }			
-int main()
-{
-	//n is number of elements
-	int n;
-	
-	printf("Enter the number of list elements\n");
-	scanf("%d",&n);
 
-	//array declared an initialised
-	int arr[n] ;
-
-	//to initialised all the elements to zero
-	memset(arr,0,n*sizeof(arr[0]));
-
-	printf("Enter the elements\n");
-	for(int i=0;i<n;i++)
-	{
-		scanf("%d,",&arr[i]);
-	}
-	
-
-	//print elements before sorting
-	printf("The elements Entered are\n");
-	display(arr,n);
-	
-	//print array after sorting
-	printf("before sorting array is \n");
-	display(arr,n);
-	
-	//calling the Bsort()
-	inssort(arr,n);
-
-	//printing array after sorting
-	printf("After sorting array is \n");
-	display(arr,n);
-}

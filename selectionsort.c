@@ -11,18 +11,6 @@
 void selsort(int *arr,int n);
 void swap(int *x,int *y);
 void display(int *arr,int n);
-int main()
-{
-	int arr[SIZE] = {12,43,0,56789,-567,34,-45};
-	
-	//int arr[] =  {10,20,30,40,50,60,70};
-	printf("Before sorting the elements are\n");
-	display(arr,SIZE);
-	
-	selsort(arr,SIZE);
-	printf("After sorting the elements are\n");
-	display(arr,SIZE);
-}
 
 void selsort(int *arr,int n)
 {

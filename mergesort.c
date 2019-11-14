@@ -73,18 +73,5 @@ void merge(int a[],int temparray[],int lpos,int rpos,int rend)
 	
 }
 
-int main()
-{
-	int a[] = {24,13,26.1,2,27,38,15};
-	int n = 8;
-	printf("Array elements are\n");
-	for(int i=0;i<n;i++)
-		printf("%d, ",a[i]);
-	printf("\n");
-	merge_sort(a,n);
-	printf("After sorting Array elements are\n");
-	for(int i=0;i<n;i++)
-		printf("%d, ",a[i]);
-}
 
 		

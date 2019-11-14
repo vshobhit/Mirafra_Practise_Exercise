@@ -8,18 +8,6 @@ void qsort(int* arr,int low,int up,int n);
 int partition(int *arr,int low,int up,int n);
 void swap(int* x,int* y);
 void display(int* arr,int n);
-int main()
-{
-	//input array
-	int arr[] = {48,44,19,59,72,80,42,65,82,8,95,68};
-	
-	printf("before quicksort the elements are\n");
-	display(arr,SIZE);
-	qsort(arr,0,SIZE-1,SIZE);
-	printf("after quicksort the elements are\n");
-	display(arr,SIZE);
-
-}
 
 void display(int* arr,int n)
 {
