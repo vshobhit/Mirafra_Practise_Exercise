@@ -4,7 +4,7 @@
 
 
 
-void selsort(int *arr,int n)
+void selsort(int *arr,int n,int * temparray)
 {
 	int small,i,cnt=0;
 	for(int i=0;i<n-1;i++)
@@ -32,6 +32,10 @@ void selsort(int *arr,int n)
 		/*put smallest value at 0th place*/
 		Sswap(&arr[i],&arr[small]);
 	}
+	//copying elements from array arr to temparray
+	for (int i=0;i<n;i++)
+		temparray [i] = arr[i];
+
 }
 
 void Sswap(int* x,int* y)

@@ -2,16 +2,15 @@
 #include"header.h"
 
 
-void inssort(int *arr,int n)
+void inssort(int *arr,int n,int *temparray)
 {
 	printf("In inssort\n");
 	int temp,j;
-
+	int check_array[] = {12,13,14,15,16,17,18,19,20,21};
 	/*i is unsorted array*/
 	for(int i=1;i<n;i++)
 	{
 		
-
 		//temp stores the first element
 		temp = arr[i];
 
@@ -30,6 +29,11 @@ void inssort(int *arr,int n)
 		
 		
 	}
+	//copying elements from array arr to temparray
+	for (int i=0;i<n;i++)
+		temparray [i] = arr[i];
+
+	
 }
 
 

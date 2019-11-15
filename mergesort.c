@@ -2,13 +2,19 @@
 
 #include"header.h"
 //main merge_sort function
-void merge_sort(int a[],int n)
+void merge_sort(int a[],int n,int *tarray)
 {
 		int *temparray = malloc(n*sizeof(int));
 	//for storing resultant array
 	int *temp;
 	temp = (int*) malloc(n*sizeof(int));
 	msort(a,temp,0,n-1);
+	
+	//copying elements from array arr to tarray
+	for (int i=0;i<n;i++)
+		tarray [i] = a[i];
+
+	
 	free(temp);
 }
 

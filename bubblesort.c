@@ -4,7 +4,7 @@
 #include<stdio.h>
 #include"header.h"
 /*here largest element goes downwards*/
-void Bsort(int *arr,int n)
+void Bsort(int *arr,int n,int* temparray)
 {
 	//loop runs until the element exists
 	for(int i=0;i<n;i++)
@@ -33,10 +33,18 @@ void Bsort(int *arr,int n)
 			//condition for exiting out of function when no swap occurs
 			if(count == 0)
 			{
+				
+				//copy elements to temparray
+				for(int i=0;i<n;i++)
+				{
+					
+					temparray[i] = arr[i];
+				}
 				return;
 			}
 		
 	}
+
 }
 
 //function for swapping two numbers when both are passed by reference
