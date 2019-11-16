@@ -17,4 +17,4 @@ main:main.c
 	$(COMPILER) -c main.c
 
 clean:
-	rm -rf *.o a.out
+	rm -rf *.o result
