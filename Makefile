@@ -1,20 +1,21 @@
-COMPILER = gcc
-result :  bsort Isort Qsort Ssort Msort main
-	$(CC) -o result bubblesort.o Insertionsort.o quicksort.o selectionsort.o mergesort.o main.o  
+CC = gcc
 
-.PHONY : clean
-# -c to specify it's c file and to make .o file
-bsort: bubblesort.o
-	$(COMPILER) -c bubblesort.c
-Isort: Insertionsort.o
-	$(COMPILER) -c Insertionsort.c
-Qsort:quicksort.o
-	$(COMPILER) -c quicksort.c
-Ssort:selectionsort.o
-	$(COMPILER) -c selectionsort.c
-Msort:mergesort.o
-	$(COMPILER) -c mergesort.c
-main:main.o
-	$(COMPILER) -c main.c
-clean:	
-	rm -rf *.o result
+#here SRCS stores all .c files
+SRCS := $(wildcard *.c)
+
+# $(var : a = b) It tells that takes value of variable var and replace .a extension with .b
+BINS := $(SRCS : %.c = %.o) 
+
+
+all = ${BINS}
+
+
+#creating .out files from .o files using command gcc filename.o -o filename.out
+#%:%.o
+#	$(CC) $< -o $@
+
+#creating .o files from .c files using command gcc -c filename
+%.o : %.c
+	${CC} -c $<
+remove:
+	rm -rf *.o

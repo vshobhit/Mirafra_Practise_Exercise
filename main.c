@@ -45,6 +45,11 @@ int main()
 	    printf("6.Exit\n");
 		scanf("%d",&ch);
 			
+		if(!fflush(stdin) )
+			printf("SUCCESS\n");
+		else
+			printf("FAILURE\n");
+		printf("Your selected option is %d\n",ch);
 	    switch(ch)
 	    {
 		    case 1:
@@ -72,10 +77,11 @@ int main()
 		    case 6:
 				exit(0);
 			
+			
 	    }
-	
 		int checkarray[] = {-34,-23,0,2,12,12,45,45,67,89};
 		compare_array(temparray,checkarray);
+		
 	}
 	
 				
@@ -89,7 +95,8 @@ void compare_array(int *temparray,int *checkarray)
 	printf("The checkarray is\n");
 	for(int i=0;i<N;i++)
 		printf("%d, ",checkarray[i]);
-	printf("\n");	
+	printf("\n");
+	
 	//checking that array elements are equal or not
 	for(int i=0;i<N;i++)
 	{
