@@ -1,20 +1,38 @@
-COMPILER = gcc
-result :  bsort Isort Qsort Ssort Msort main
-	$(CC) -o result bubblesort.o Insertionsort.o quicksort.o selectionsort.o mergesort.o main.o 
+#let's construct a makefile for compiling files\
+1. bubblesort.c\
+2. Insertionsort.c\
+3. mergesort.c\
+4. quicksort.c\
+5. selectionsort.c\
+6. main.c
 
-#-c to specify it's c file
-bsort: bubblesort.c
-	$(COMPILER) -c bubblesort.c
-Isort: Insertionsort.c
-	$(COMPILER) -c Insertionsort.c
-Qsort:quicksort.c
-	$(COMPILER) -c quicksort.c
-Ssort:selectionsort.c
-	$(COMPILER) -c selectionsort.c
-Msort:mergesort.c
-	$(COMPILER) -c mergesort.c
-main:main.c
-	$(COMPILER) -c main.c
+#for denoting the compiler used
+CC = gcc
+FLAGS = -lm
+#SOURCEFILES variable now contains all .c files
+SOURCEFILES := $(wildcard *.c)
+
+#take all the .c files , which are dependent by target SOURCEFILES and convert them to .o files 
+BINARY := $(SOURCEFILES:%.c=%.o)
+
+#the ${BINARY} causes to replace BINS with defination defined above
+all: $(BINARY) 
+	$(CC) -o result *.o 
+
+#%: %*.o\
+	@echo "shobhit"\
+	${CC} ${FLAGS} $< -o $@
+ 
+
+%.o: %.c
+	@echo "creating"
+	$(CC) -c $< 
 
 clean:
-	rm -rf *.o result
+	@echo "cleaning"
+	rm -rf *.o
+
+
+
+
+  
