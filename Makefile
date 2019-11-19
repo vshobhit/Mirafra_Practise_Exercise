@@ -17,16 +17,17 @@ CC = gcc
 FLAGS = -lm
 
 #exclude the try.c from compilation
-EXCLUDE = try.c
+#EXCLUDE = try.c
 
 #SOURCEFILES variable now contains all .c files and try.c is excluded from compiling
 SOURCEFILES := $(filter-out $(EXCLUDE) ,$(wildcard *.c))
 
+EXCLUDE=$(subst try.c,,${SOURCEFILES})
 #take all the .c files , which are dependent by target SOURCEFILES and convert them to .o files 
-BINARY := $(SOURCEFILES:%.c=result)
+BINARY := $(EXCLUDE:%.c=result)
 
 #the ${BINARY} causes to replace BINS with defination defined above
-all: result 
+all: ${BINARY} 
 
 
 result: *.o
