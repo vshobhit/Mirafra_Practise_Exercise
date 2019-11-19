@@ -1,11 +1,12 @@
 /*program to understand bubblesort*/
 
 
-#include<stdio.h>
 #include"header.h"
 /*here largest element goes downwards*/
 void Bsort(int *arr,int n,int* temparray)
 {
+	clock_t start,end;
+	start = clock();
 	//loop runs until the element exists
 	for(int i=0;i<n;i++)
 	{
@@ -21,7 +22,7 @@ void Bsort(int *arr,int n,int* temparray)
 			if(arr[j] > arr[j+1])
 			{
 				//swap function for swapping the two neighbour elements in array
-				Bswap(&arr[j],&arr[j+1]);
+				swap(&arr[j],&arr[j+1]);
 				
 				//count for increment everytime swap happens 
 				//If in this loop swap doesn't occured that means array becomes sorted.
@@ -38,22 +39,17 @@ void Bsort(int *arr,int n,int* temparray)
 				for(int i=0;i<n;i++)
 				{
 					
+					
 					temparray[i] = arr[i];
 				}
+				end = clock();
+				print_time(start,end);
 				return;
 			}
 		
 	}
+	end = clock();
+	print_time(start,end);
 
 }
 
-//function for swapping two numbers when both are passed by reference
-void Bswap(int* x,int*y)
-{
-	int tmp = *x;
-	*x = *y;
-	*y = tmp;
-	
-}
-
-		

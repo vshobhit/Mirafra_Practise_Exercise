@@ -1,5 +1,25 @@
 #include<stdio.h>
 #include<stdlib.h>
+#include<string.h>
+#include<time.h>
+#define MAX 10
+//for printing time of each sorting
+void print_time(int ,int);
+
+
+void swap(int* x,int*y);
+
+void compare_array(int *temparray,int *checkarray);
+void display(int *arr ,int n);
+void compare_file_data(int *buffer,int N,int *cur_p);
+void getdata_file(int *buffer,int *N);
+void data_write(int *buffer,int N);
+
+
+
+//file pointers for opening source and destination file
+void file_open();
+
 //Bubble sort
 void Bswap(int *x,int *y);
 void Bsort(int *arr,int n,int* temparray);

@@ -4,6 +4,9 @@
 //main merge_sort function
 void merge_sort(int a[],int n,int *tarray)
 {
+
+	int start = clock();
+
 		int *temparray = malloc(n*sizeof(int));
 	//for storing resultant array
 	int *temp;
@@ -16,6 +19,9 @@ void merge_sort(int a[],int n,int *tarray)
 
 	
 	free(temp);
+
+	int end = clock();
+	print_time(start,end);
 }
 
 //function which breaks array into two sub array

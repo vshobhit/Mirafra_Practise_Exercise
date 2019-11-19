@@ -4,6 +4,7 @@
 
 void inssort(int *arr,int n,int *temparray)
 {
+	int start= clock();
 	printf("In inssort\n");
 	int temp,j;
 	int check_array[] = {12,13,14,15,16,17,18,19,20,21};
@@ -32,7 +33,8 @@ void inssort(int *arr,int n,int *temparray)
 	//copying elements from array arr to temparray
 	for (int i=0;i<n;i++)
 		temparray [i] = arr[i];
-
+	int end = clock();
+	print_time(start,end);
 	
 }
 

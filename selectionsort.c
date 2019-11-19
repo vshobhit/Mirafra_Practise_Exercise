@@ -6,6 +6,9 @@
 
 void selsort(int *arr,int n,int * temparray)
 {
+
+	int start = clock();
+
 	int small,i,cnt=0;
 	for(int i=0;i<n-1;i++)
 	{
@@ -26,22 +29,21 @@ void selsort(int *arr,int n,int * temparray)
 				cnt++;
 			 if(small == i)
 			{
+				int end = clock();
+				print_time(start,end);
+				
 				return;
 			}
 		}
 		/*put smallest value at 0th place*/
-		Sswap(&arr[i],&arr[small]);
+		swap(&arr[i],&arr[small]);
 	}
 	//copying elements from array arr to temparray
 	for (int i=0;i<n;i++)
 		temparray [i] = arr[i];
 
-}
 
-void Sswap(int* x,int* y)
-{
-	int temp = *x;
-	*x = *y;
-	*y = temp;
-}
+	int end = clock();
+	print_time(start,end);
 
+}

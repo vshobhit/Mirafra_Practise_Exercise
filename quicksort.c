@@ -6,6 +6,7 @@
 
 void quick_sort(int *arr,int low,int up,int n,int *temparray)
 {
+	int start = clock();
 	int pivot;
 	/*condition when there's only one element or no elements*/
 	if(low>=up)
@@ -24,6 +25,8 @@ void quick_sort(int *arr,int low,int up,int n,int *temparray)
 	
 	//for right half of pivot
 	quick_sort(arr,pivot+1,up,n,temparray);
+	int end = clock();
+	print_time(start,end);
 }
 
 int partition(int *arr,int i,int j,int n)
@@ -47,7 +50,7 @@ int partition(int *arr,int i,int j,int n)
 		}
 		if(low < up)
 		{
-			Qswap(arr+low,arr+up);
+			swap(arr+low,arr+up);
 			up--;
 			low++;
 			
@@ -59,16 +62,10 @@ int partition(int *arr,int i,int j,int n)
 		}
 	
 	}
-	Qswap(arr+up,arr+pivot);
+	swap(arr+up,arr+pivot);
 	return up;
 }
 
- void Qswap(int* x,int* y)
-{
-	int tmp = *x;
-	*x = *y;
-	*y = tmp;
-}
 		
 		
 	
