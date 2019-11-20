@@ -11,7 +11,7 @@
 10. getdata_file.c\
 11. print_time.c \
 12. swap.c
-#comment added
+
 #for denoting the compiler used
 CC = gcc
 FLAGS = -lm
